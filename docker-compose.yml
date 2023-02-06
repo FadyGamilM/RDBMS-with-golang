@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  # postgres database service
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: fady
+      POSTGRES_PASSWORD: FadyGamil731998
+      POSTGRES_DB: learningRDBMSwithGO
+    ports:
+      - 5432:5432 # our machine : on container
+    
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      ADMINER_DESIGN: dracula
+    ports:
+      - 3333:8080
